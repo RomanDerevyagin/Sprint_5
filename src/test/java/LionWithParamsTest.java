@@ -1,3 +1,4 @@
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,12 +10,14 @@ public class LionWithParamsTest {
     @ParameterizedTest
     @ValueSource(strings = {"Самец","Самка"})
     void testDoesHaveMane(String sex) throws Exception {
-        Lion lion = new Lion(sex);
+        Feline feline= new Feline();
+        Lion lion = new Lion(feline,sex);
         boolean mane = "Самец".equals(sex);
         assertEquals(mane , lion.doesHaveMane());
     }
     @Test
     void testLionConstructorThrowsException() {
-        assertThrows(Exception.class, () -> new Lion("лол кек"));
+        Feline feline = new Feline();
+        assertThrows(Exception.class, () -> new Lion(feline,"лол кек"));
     }
 }

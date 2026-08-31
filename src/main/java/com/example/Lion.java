@@ -5,8 +5,8 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
-
-    public Lion(String sex) throws Exception {
+    Feline feline;
+    public Lion(Feline feline, String sex) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -14,14 +14,11 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
-    }
-    Lions lions;
-    public Lion(Lions lions){
-        this.lions=lions;
+        this.feline=feline;
     }
 
     public int getKittens() {
-        return lions.getKittens();
+        return feline.getKittens();
     }
 
     public boolean doesHaveMane() {
@@ -29,6 +26,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return lions.eatMeats("Хищник");
+        return feline.eatMeat();
     }
 }

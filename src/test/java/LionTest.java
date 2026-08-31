@@ -1,6 +1,6 @@
 import com.example.Feline;
 import com.example.Lion;
-import com.example.Lions;
+//import com.example.Lions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -18,14 +18,14 @@ public class LionTest {
 
     @Test
     void testGetFoodLion() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline,"Самец");
         lion.getFood();
-        Mockito.verify(feline).eatMeats("Хищник");
+        Mockito.verify(feline).eatMeat();
     }
     @Test
-    void testGetKittensLionsEqualsOne(){
+    void testGetKittensLionsEqualsOne() throws Exception {
         Feline feline = new Feline();
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(feline,"Самец");
         int child = lion.getKittens();
         assertEquals(1,child);
     }

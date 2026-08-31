@@ -5,8 +5,8 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
-
-<span class="fc" id="L9">    public Lion(String sex) throws Exception {</span>
+    Feline feline;
+<span class="fc" id="L9">    public Lion(Feline feline, String sex) throws Exception {</span>
 <span class="fc bfc" id="L10" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
 <span class="fc" id="L11">            hasMane = true;</span>
 <span class="fc bfc" id="L12" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
@@ -14,22 +14,19 @@ public class Lion {
         } else {
 <span class="fc" id="L15">            throw new Exception(&quot;Используйте допустимые значения пола животного - самей или самка&quot;);</span>
         }
-<span class="fc" id="L17">    }</span>
-    Lions lions;
-<span class="fc" id="L19">    public Lion(Lions lions){</span>
-<span class="fc" id="L20">        this.lions=lions;</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L17">        this.feline=feline;</span>
+<span class="fc" id="L18">    }</span>
 
     public int getKittens() {
-<span class="fc" id="L24">        return lions.getKittens();</span>
+<span class="fc" id="L21">        return feline.getKittens();</span>
     }
 
     public boolean doesHaveMane() {
-<span class="fc" id="L28">        return hasMane;</span>
+<span class="fc" id="L25">        return hasMane;</span>
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="fc" id="L32">        return lions.eatMeats(&quot;Хищник&quot;);</span>
+<span class="fc" id="L29">        return feline.eatMeat();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
